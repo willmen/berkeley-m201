@@ -86,7 +86,17 @@ The model maintains predictive power 2+ years forward, suggesting the learned pa
 
 #### Outline of project
 
-- [00_Capstone_EDA_Submission.ipynb](00_Capstone_EDA_Submission.ipynb) - Complete analysis including data loading, cleaning, EDA, feature engineering, visualizations, and baseline modeling
+This project follows a structured analytical workflow:
+
+1. **Data Acquisition** - Fetched CVE metadata from NIST NVD and exploitation labels from CISA KEV
+2. **Data Cleaning & Preprocessing** - Handled missing values (median imputation for CVSS), validated data types, checked for duplicates
+3. **Exploratory Data Analysis** - Analyzed class imbalance (~0.4% positive), feature distributions, temporal trends, and correlations with target
+4. **Feature Engineering** - Created predictive signals from CVSS vector components, NLP keyword extraction, vendor prevalence flags, and MITRE ATT&CK mappings
+5. **Baseline Modeling** - Established CVSS-only baseline (35.3% Recall@10%), then built Logistic Regression model with engineered features
+6. **Evaluation** - Compared models using Recall@K%, PR-AUC, and ROC-AUC; validated with temporal train/test split
+
+**Primary Notebook:**
+- [00_Capstone_EDA_Submission.ipynb](00_Capstone_EDA_Submission.ipynb) - Complete analysis pipeline from data loading through baseline model evaluation
 
 ##### Contact and Further Information
 
